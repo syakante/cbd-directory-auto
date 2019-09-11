@@ -1,0 +1,2 @@
+# cbd-directory-auto
+pingas
