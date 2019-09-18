@@ -3,7 +3,7 @@ import math
 import copy
 import sys
 
-with open('allStudents.csv',newline="") as studentNames:
+with open('mscb.csv',newline="") as studentNames:
     names = csv.reader(studentNames, delimiter=',')
     namesList = []
     for line in names:
@@ -17,6 +17,7 @@ namesList.reverse()
 
 def optimizeTables(n):
 	#where n is some number of students.
+	#TODO: if the number of students is less than or near 18 (which is the max per page) then.......
 	pages = math.ceil(n/18)
 	#if you think about it, the tables separated by page are really just one big table haha where the "height" is pages*the smaller table's height.
 	totalRows = n//pages + 1
@@ -115,6 +116,7 @@ def tdNameCode(nameTuple,filePath, hasRoom,hasPosn):
 	print(block)
 	
 def main(title, filePath,rooms,posn):
+	#filePath is for the images, e.g. students/MSCB/
 	optimizeTables(numStudents)
 	sys.stdout = open("tables.txt", "w")
 	generateNameTable(title, filePath, rooms,posn)
